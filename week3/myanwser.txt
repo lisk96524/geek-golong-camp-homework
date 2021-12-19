@@ -1,0 +1,9 @@
+question:
+基于 errgroup 实现一个 http server 的启动和关闭 ，以及 linux signal 信号的注册和处理，要保证能够一个退出，全部注销退出。
+详情见goroute_practice.go
+
+
+//自我总结：   作为一个准备转go的"近似的小白"，毛老师这部分内容听得时候还是挺晕的，比如讲到channel但是并没有使用一样（实际上errgourp好像把前面的goroute管理和通过channel管理goroute都囊括了），这里借鉴了网上大佬的贴子。
+//问题、思路自我归纳
+关键点：保证退出的全部注销
+服务的启动肯定是用一个goroute去做的，然后就是要监控退出，这里用到了毛老师讲到的利用上下文做goroute的管理Done这个通道，因为timeout、cancel、deadline都会引起Done的关闭，关闭时候会发送空消息，利用这个可以通过Done完成return
