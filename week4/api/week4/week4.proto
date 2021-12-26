@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package api.week4;
+
+option go_package = "week4/api/week4;week4";
+option java_multiple_files = true;
+option java_package = "api.week4";
+
+service Week4 {
+	rpc CreateWeek4 (CreateWeek4Request) returns (CreateWeek4Reply);
+	rpc UpdateWeek4 (UpdateWeek4Request) returns (UpdateWeek4Reply);
+	rpc DeleteWeek4 (DeleteWeek4Request) returns (DeleteWeek4Reply);
+	rpc GetWeek4 (GetWeek4Request) returns (GetWeek4Reply);
+	rpc ListWeek4 (ListWeek4Request) returns (ListWeek4Reply);
+}
+
+message CreateWeek4Request {}
+message CreateWeek4Reply {}
+
+message UpdateWeek4Request {}
+message UpdateWeek4Reply {}
+
+message DeleteWeek4Request {}
+message DeleteWeek4Reply {}
+
+message GetWeek4Request {}
+message GetWeek4Reply {}
+
+message ListWeek4Request {}
+message ListWeek4Reply {}
